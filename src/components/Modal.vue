@@ -4,42 +4,44 @@
       v-model="localDialog"
     >
       <v-card>
+        <div class="close-button">
+          <v-btn
+            class="modal-button"
+            icon
+            x-large
+            color="grey darken-3"
+            @click="closeModal"
+          >
+            <v-icon>
+              mdi-close-circle-outline
+            </v-icon>
+          </v-btn>
+        </div>
+        <v-card-text class="title font-weight-bold py-0">
+          {{item.name}}
+        </v-card-text>
+        <div class="card-image">
+          <img :src="item.image_url">
+        </div>
+        <v-card-text class="subtitle font-weight-bold py-3 teal--text">
+          {{item.introduction}}
+        </v-card-text>
+        <v-card-text>
+          {{item.description}}
+        </v-card-text>
         <chart :chartData="chartData" :options="chartOption"></chart>
-        <v-card-actions>
-          <v-spacer></v-spacer>
+        <v-col cols="12" class="pa-5">
         <v-btn
           class="modal-button"
           outlined
           small
+          block
           color="indigo"
-          @click.stop.prevent="openWindow(localAffiliateLink)"
+          @click.stop.prevent="openWindow(item.affiliateLink)"
         >
-          Amazonへ
+          Amazonで購入する
         </v-btn>
-        </v-card-actions>
-        <v-card-title class="headline">{{localName}}</v-card-title>
-
-        <v-card-text>
-          {{localDescription}}
-        </v-card-text>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            text
-            @click="closeModal"
-          >
-            CLOSE
-          </v-btn>
-          <!-- <v-btn
-            color="green darken-1"
-            text
-            @click="closeModal"
-          >
-            Agree
-          </v-btn> -->
-        </v-card-actions>
+        </v-col>
       </v-card>
     </v-dialog>
   </div>
@@ -65,14 +67,10 @@ export default class ProductSuggest extends Vue {
   values?: number[]
 
   @Prop()
-  name?: string
+  item?: any
 
   @Prop()
-
-  description?: string
-
-  @Prop()
-  affiliateLink?: string
+  typePoint?: number[]
 
   @Emit()
   public parentDataReset () {
@@ -88,19 +86,11 @@ export default class ProductSuggest extends Vue {
   }
 
   get localValues () {
-    return this.values
-  }
-
-  get localDescription () {
-    return this.description
-  }
-
-  get localName () {
-    return this.name
-  }
-
-  get localAffiliateLink () {
-    return this.affiliateLink
+    if (this.values !== undefined) {
+      return this.values.map((point: number) => point * 0.75)
+    } else {
+      return [5, 5, 5, 5, 5]
+    }
   }
 
   public closeModal () {
@@ -108,16 +98,27 @@ export default class ProductSuggest extends Vue {
   }
 
   private chartData: ChartData = {
-    labels: ['泡立ち', '優しさ(頭皮)', '髪の補修力', '成分の安全性', '仕上がり'],
+    labels: ['泡立ち', '頭皮への優しさ', '髪の補修力', '安全性', '　　仕上がり'],
     datasets: [
       {
-        label: 'シャンプー解析',
+        label: 'シャンプー',
         data: this.localValues,
         backgroundColor: [
-          'rgba(0, 173, 181, 0.8)'
+          'rgba(0, 173, 181, 0.5)'
         ],
         borderColor: [
           'rgba(0, 173, 181, 1)'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'アナタ',
+        data: this.typePoint,
+        backgroundColor: [
+          'rgba(255, 190, 11, 0.5)'
+        ],
+        borderColor: [
+          'rgba(255, 190, 11, 1)'
         ],
         borderWidth: 1
       }
@@ -130,9 +131,19 @@ export default class ProductSuggest extends Vue {
         display: false
       },
       ticks: {
-        suggestedMin: 1,
+        suggestedMin: 0,
         suggestedMax: 6
       }
+    },
+    legend: {
+      display: true,
+      position: 'bottom'
+    },
+    title: {
+      display: true,
+      text: 'シャンプーとアナタの相性',
+      fontSize: 13,
+      fontColor: '#000000'
     }
   }
 
@@ -143,5 +154,18 @@ export default class ProductSuggest extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
+.close-button{
+  display: flex;
+  justify-content: flex-end;
+}
+.card-image{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.card-image img{
+  height: 100%;
+}
 </style>

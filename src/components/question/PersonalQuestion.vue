@@ -8,7 +8,7 @@
             <v-row justify="space-around">
               <v-select
                 :items="question.choices"
-                label="性別"
+                :label="question.label"
                 v-model="question.answer"
                 color="grey darken-2"
               ></v-select>
@@ -60,7 +60,8 @@ export default class PersonalQuestion extends Vue {
         '女'
       ],
       answer: '',
-      id: 'sex'
+      id: 'sex',
+      label: '性別'
     },
     {
       choices: [
@@ -76,7 +77,8 @@ export default class PersonalQuestion extends Vue {
         '65歳~'
       ],
       answer: '',
-      id: 'age'
+      id: 'age',
+      label: '年齢'
     }
   ]
 
