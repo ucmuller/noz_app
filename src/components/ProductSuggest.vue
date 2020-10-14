@@ -5,6 +5,7 @@
       <v-col cols="12" class="px-0">
         <v-card class="mx-auto" max-width="500">
           <div class="d-flex flex-no-wrap justify-space-between card-product">
+            <v-col cols="2" class="pa-0 ma-0">
             <v-avatar
               class="ma-3"
               size="40"
@@ -12,28 +13,29 @@
             >
               <div :class="prizeIcon[i]"></div>
             </v-avatar>
+            </v-col>
             <!-- <v-avatar
               class="ma-3"
               size="50"
               tile
             > -->
-            <img class="card-image" :src="item.image_url">
+            <v-col cols="2" class="pa-0 ma-0">
+              <img class="card-image" :src="item.image_url">
+            </v-col>
             <!-- </v-avatar> -->
+            <v-col cols="8" class="pa-0 ma-0">
             <div class="card-string">
-              <h5 class="product-name">{{item.name}}</h5>
+              <h4 class="product-name text-left">{{item.name}}</h4>
               <div class="card-string-icon">
-                <h5 class="product-price">¥{{item.price}} {{item.volume}}ml</h5>
+                <p class="product-price">¥{{item.price}} {{item.volume}}ml</p>
                 <v-btn
-                  class="modal-button"
-                  icon
+                  class="modal-button white--text mx-1"
                   small
-                  color="grey darken-3"
+                  color="blue-grey darken-2"
                   @click.stop="dialog[i] = true"
                   @click="openModal()"
                 >
-                  <v-icon dark>
-                    mdi-dots-vertical-circle-outline
-                  </v-icon>
+                くわしく見る
                 </v-btn>
               </div>
               <!-- <div>
@@ -49,6 +51,7 @@
                 </v-btn>
               </div> -->
             </div>
+            </v-col>
           </div>
           <chart :chartData="chartData(item.point)" :options="chartOption"></chart>
 
@@ -195,7 +198,7 @@ export default class ProductSuggest extends Vue {
   text-align: start;
 }
 .card-product{
-  align-items: flex-end;
+  align-items: center;
 }
 .card-string{
   margin: auto;
@@ -204,7 +207,7 @@ export default class ProductSuggest extends Vue {
 .card-string-icon{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 .product-name{
   font-family: "Dosis-Regular";
@@ -214,7 +217,8 @@ export default class ProductSuggest extends Vue {
 }
 .card-image{
   height: 70px;
-  margin: 5px;
+  width: 100%;
+  margin: 0;
 }
 .card-image img{
   height: 70px;

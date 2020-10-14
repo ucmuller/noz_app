@@ -40,17 +40,39 @@
         </v-card>
       </v-col>
       <v-col cols="12" class="type-introduction py-5">
-        <v-col cols="12" class="ma-0 pa-0">
+        <!-- <v-col cols="12" class="ma-0 pa-0">
           <chart :chartData="chartData" :options="chartOption"></chart>
-        </v-col>
-        <v-col cols="12" sm="8" class="pa-0">
-          <div>
-            <p class="pa-0 ma-0">{{typeIntroduction}}</p>
-          </div>
+        </v-col> -->
+        <v-col cols="12" class="pa-0">
+          <v-card>
+            <chart :chartData="chartData" :options="chartOption"></chart>
+            <div class="pa-0 ma-3 introduction">
+              <p class="pa-2 ma-0">{{typeIntroduction}}</p>
+            </div>
+            <div class="avatar-box">
+              <v-col cols="3" class="pa-0 ma-0">
+                <v-avatar size="60">
+                  <img src="@/assets/face_kenji.png" alt="">
+                </v-avatar>
+              </v-col>
+              <v-col cols="9" class="pa-0 ma-0">
+                <h4 class="text-left">監修: 井上賢治(ケンジ)</h4>
+                <p class="pa-0 ma-0">Michio Nozawa HAIR SALON 銀座店 店長｜美容師歴18年目｜自身の頭で年間200種類のシャンプーを検証、解析するシャンプーマニア</p>
+              </v-col>
+            </div>
+          </v-card>
         </v-col>
       </v-col>
       <v-col cols="12" class="pa-0">
         <ProductSuggest :shampooDataArray=shampooDataArray :typePoint=localValues />
+      </v-col>
+      <v-col cols="12" class="py-0">
+        <h3 class="pt-5">より詳しく診断を希望の方</h3>
+        <p class="red--text">(先着100名様無料診断)</p>
+        <p class="line-introduction text-left">タイプ精度をあげるため、髪と頭皮にまつわる、より詳しい相談や診断をLINEにて承っております。 プロの美容師がより詳しいカウンセリング診断をして、アナタにあったシャンプーやトリートメント、施術などのオススメをしています。気軽にご相談下さい。</p>
+        <h4 class="py-0">LINEで無料相談する</h4>
+        <p class="red--text">(先着100名様無料)</p>
+        <a href="https://lin.ee/Osk4lUC"><img height="36" border="0" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"></a>
       </v-col>
     </v-row>
   </v-container>
@@ -142,6 +164,22 @@ export default class Result extends Vue {
 .type-introduction{
   background-color: #f6f5f5;
 }
+.introduction{
+  position: relative;
+  padding: 0.6em;
+  background: #e0edff;
+  border-radius: 10px;
+}
+.introduction:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+  width: 0;
+  height: 0;
+}
 .type-introduction h3{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -151,5 +189,11 @@ export default class Result extends Vue {
   padding-left: 10px;
   padding-right: 10px;
   text-align: start;
+}
+.avatar-box{
+  display: flex;
+}
+.line-introduction{
+  background-color: #f6f5f5;
 }
 </style>

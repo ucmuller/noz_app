@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="pa-0">
     <div v-if="page == 1">
       <ScalpQuestion @handle-parent="getScalpQuestionValue" />
     </div>
@@ -14,6 +14,7 @@
     </div>
     <div v-if="page == 5">
       <Result :values=point :conditionType=conditionType :shampooDataArray=shampooDataArray :typeIntroduction=typeIntroduction />
+      <Footer/>
     </div>
     <v-row class="text-center" justify="space-around">
     </v-row>
@@ -31,6 +32,7 @@ import OilyQuestion from '@/components/question/OilyQuestion.vue'
 import HairQuestion from '@/components/question/HairQuestion.vue'
 import PersonalQuestion from '@/components/question/PersonalQuestion.vue'
 import Result from '@/components/question/Result.vue'
+import Footer from '@/components/Footer.vue'
 
 interface Answer {
   conditionPainShampoo: string;
@@ -50,6 +52,7 @@ interface Answer {
   conditionVolume: string;
   sex: string;
   age: string;
+  shampooName: string;
 }
 
 @Component({
@@ -58,7 +61,8 @@ interface Answer {
     OilyQuestion,
     HairQuestion,
     PersonalQuestion,
-    Result
+    Result,
+    Footer
   }
 })
 
@@ -91,7 +95,8 @@ export default class Question extends Vue {
     conditionBleach: '',
     conditionVolume: '',
     age: '',
-    sex: ''
+    sex: '',
+    shampooName: ''
   }
 
   public getScalpQuestionValue (value: Answer) {
@@ -124,6 +129,7 @@ export default class Question extends Vue {
   public getPersonalQuestionValue (value: Answer) {
     this.value.age = value.age
     this.value.sex = value.sex
+    this.value.shampooName = value.shampooName
     this.fetchTypeData()
   }
 
@@ -204,7 +210,7 @@ export default class Question extends Vue {
 
   public saveAnsweredDataToFirestore () {
     const data = {
-      createdt: firebase.firestore.Timestamp.now(),
+      createdAt: firebase.firestore.Timestamp.now(),
       answer: this.value
     }
     DB.collection('result')

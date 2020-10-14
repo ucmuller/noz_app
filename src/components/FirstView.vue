@@ -4,7 +4,7 @@
       align="center"
       justify="center"
     >
-      <v-col cols="12" sm="12" md="6" lg="7">
+      <v-col cols="12">
         <!-- <h1 class="font-weight-bold mb-3">
           <span class="first-view-span">11</span>Questions
         </h1> -->

@@ -1,28 +1,40 @@
 <template>
   <v-container class="personalQuestion">
-    <div v-for='(question, i) in questions'
-      :key="i">
-      <v-row class="text-center question-row" justify="space-around">
-        <v-col cols="6" class="center select-form">
-          <div>
-            <v-row justify="space-around">
-              <v-select
-                :items="question.choices"
-                :label="question.label"
-                v-model="question.answer"
-                color="grey darken-2"
-              ></v-select>
-            </v-row>
-          </div>
-        </v-col>
-      </v-row>
-    </div>
+    <v-row
+    v-for='(question, i) in questions'
+    :key="i"
+    class="text-center question-row"
+    justify="space-around">
+      <v-col cols="8" class="center select-form">
+        <div>
+          <v-row justify="space-around">
+            <v-select
+              :items="question.choices"
+              :label="question.label"
+              v-model="question.answer"
+              color="grey darken-2"
+            ></v-select>
+          </v-row>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row class="text-center question-row" justify="space-around">
+      <v-col cols="10" class="center select-form">
+        <v-text-field
+            label="アナタが今使用しているシャンプー名(任意)"
+            placeholder="ボタニカルシャンプー"
+            v-model="value.shampooName"
+            outlined
+          ></v-text-field>
+      </v-col>
+    </v-row>
     <v-row class="text-center question-row" justify="space-around">
       <v-col cols="12" class="center">
         <!-- <v-btn class="question-button" large @click="deleteValue">AGAIN</v-btn> -->
         <v-btn
           class="question-button"
-          large color="lime"
+          large
+          color="lime"
           :disabled="!ready"
           @click="setValue">
           ENTER
@@ -43,6 +55,7 @@ import { Vue, Watch } from 'vue-property-decorator'
 interface Answer {
   age: string;
   sex: string;
+  shampooName: string;
 }
 
 @Component
@@ -50,7 +63,8 @@ export default class PersonalQuestion extends Vue {
   public ready = false
   public value = {
     age: '',
-    sex: ''
+    sex: '',
+    shampooName: ''
   }
 
   public questions = [
