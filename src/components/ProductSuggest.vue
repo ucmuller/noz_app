@@ -28,7 +28,7 @@
               <h4 class="product-name text-left">{{item.name}}</h4>
               <div class="card-string-icon">
                 <p class="product-price">¥{{item.price}} {{item.volume}}ml</p>
-                <v-btn
+                <!-- <v-btn
                   class="modal-button white--text mx-1"
                   small
                   color="blue-grey darken-2"
@@ -36,7 +36,7 @@
                   @click="openModal()"
                 >
                 くわしく見る
-                </v-btn>
+                </v-btn> -->
               </div>
               <!-- <div>
                 <v-btn
@@ -53,9 +53,44 @@
             </div>
             </v-col>
           </div>
+          <v-card-text class="text-left subtitle font-weight-bold pb-0 teal--text">
+            {{item.introduction}}
+          </v-card-text>
+          <v-card-text class="text-left pb-0 pt-2">
+            {{item.description}}
+          </v-card-text>
           <chart :chartData="chartData(item.point)" :options="chartOption"></chart>
-
-          <!-- <v-rating
+          <v-col v-if="item.affiliateLinkAmazon" cols="12" class="px-10 py-0 pt-3">
+            <v-btn
+              class="white--text my-1"
+              block
+              color="#146EB4"
+              @click.stop.prevent="openWindowAmazon(item.affiliateLinkAmazon)"
+            >
+              Amazonで購入する
+            </v-btn>
+          </v-col>
+          <v-col v-if="item.affiliateLinkYahoo" cols="12" class="px-10 py-0">
+            <v-btn
+              class="white--text my-1"
+              block
+              color="#fc6600"
+              @click.stop.prevent="openWindowYahoo(item.affiliateLinkYahoo)"
+            >
+              Yahoo!で購入する
+            </v-btn>
+          </v-col>
+          <v-col v-if="item.affiliateLinkRakuten" cols="12" class="px-10 py-0 pb-3">
+            <v-btn
+              class="white--text my-1"
+              block
+              color="#bf0000"
+              @click.stop.prevent="openWindowRakuten(item.affiliateLinkRakuten)"
+            >
+              楽天で購入する
+            </v-btn>
+          </v-col>
+                  <!-- <v-rating
             v-model="item.rating"
             :length="rateLength"
             background-color="grey lighten-1"
@@ -135,8 +170,18 @@ export default class ProductSuggest extends Vue {
     }
   }
 
-  public openWindow (url: string) {
+  public openWindowAmazon (url: string) {
     this.$ga.event('amazonLinkButton', 'push')
+    window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
+
+  public openWindowYahoo (url: string) {
+    this.$ga.event('yahooLinkButton', 'push')
+    window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
+
+  public openWindowRakuten (url: string) {
+    this.$ga.event('rakutenLinkButton', 'push')
     window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 
@@ -222,10 +267,6 @@ export default class ProductSuggest extends Vue {
 }
 .card-image img{
   height: 70px;
-}
-.modal-button{
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .prize-icon_1{
   width: 100%;

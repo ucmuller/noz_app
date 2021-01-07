@@ -135,9 +135,7 @@ export default class Question extends Vue {
 
   public checkConditionType (value: Answer) {
     const conditionTypeArray = [
-      value.conditionPainShampoo,
-      value.conditionPainHairdye,
-      value.conditionItchy,
+      value.conditionSensitiveSkin,
       value.conditionRash
     ]
     this.conditionType.scalpType = conditionTypeArray.includes('A') ? '敏感肌' : '健康肌'

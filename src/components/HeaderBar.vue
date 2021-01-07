@@ -3,10 +3,11 @@
     app
     color="grey lighten-4"
     light
+    flat
   >
     <div class="d-flex align-center">
       <div class="my-2">
-        <v-btn class="button-title" text color="black" @click="pushHome">select-shampoo</v-btn>
+        <v-btn class="button-title px-0" text color="black" @click="pushHome">select-shampoo</v-btn>
       </div>
     </div>
     <v-spacer></v-spacer>

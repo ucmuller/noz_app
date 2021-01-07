@@ -65,10 +65,10 @@ export default class Footer extends Vue {
   ]
 
   public buttons = [
-    {
-      label: 'シャンプー剤一覧',
-      link: ''
-    },
+    // {
+    //   label: 'シャンプー剤一覧',
+    //   link: ''
+    // },
     {
       label: 'シャンプーの選び方',
       link: 'https://select-shampoo.com/about-shampoo/how-to-choose-shampoo/'

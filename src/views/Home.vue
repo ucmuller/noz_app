@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <FirstView/>
   </div>
 </template>
@@ -20,7 +19,3 @@ import FirstView from '@/components/FirstView.vue'
 export default class Home extends Vue {
 }
 </script>
-
-<style scoped>
-
-</style>

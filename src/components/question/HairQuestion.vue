@@ -5,7 +5,7 @@
       <v-row :id="question.id" class="text-center question-row" justify="space-around">
         <v-col cols="12" class="center">
           <div>
-            <h2>{{question.question}}</h2>
+            <h3>{{question.question}}</h3>
             <v-row justify="space-around">
               <v-radio-group v-if="i === 0 || i === 4" v-model="question.answer">
                 <v-radio

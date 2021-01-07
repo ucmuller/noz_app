@@ -12,7 +12,6 @@
 import Component from 'vue-class-component'
 import { Vue } from 'vue-property-decorator'
 import HeaderBar from './components/HeaderBar.vue'
-import Footer from './components/Footer.vue'
 
 @Component({
   components: {
@@ -26,7 +25,9 @@ export default class App extends Vue {
 
 <style scoped>
 .wrap {
+  max-width: 600px;
+  margin: auto;
+  font-family: Noto Sans JP,sans-serif;
   overflow: hidden;
-  font-family: 'Dosis-Regular'
 }
 </style>
