@@ -63,8 +63,28 @@
           </v-card>
         </v-col>
       </v-col>
+      <v-col cols="12" class="pt-3 pb-0">
+        <v-btn
+          class="white--text button font-weight-bold"
+          color="#19C0C9"
+          large
+          @click="openWindowAmazon('https://cramel.jp/productlist/14')"
+        >
+          YouTuberが使っているシャンプー
+        </v-btn>
+      </v-col>
       <v-col cols="12" class="pa-0">
         <ProductSuggest :shampooDataArray=shampooDataArray :typePoint=localValues />
+      </v-col>
+      <v-col cols="12" class="pt-3 pb-0">
+        <v-btn
+          class="white--text button font-weight-bold"
+          color="#19C0C9"
+          large
+          @click="openWindowAmazon('https://cramel.jp/productlist/14')"
+        >
+          YouTuberが使っているシャンプー
+        </v-btn>
       </v-col>
       <v-col cols="12" class="py-0">
         <h3 class="pt-5">より詳しく診断を希望の方</h3>
@@ -150,6 +170,10 @@ export default class Result extends Vue {
       fontColor: '#000000'
     }
   }
+
+  public openWindowAmazon (url: string) {
+    window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
 }
 </script>
 
@@ -195,5 +219,8 @@ export default class Result extends Vue {
 }
 .line-introduction{
   background-color: #f6f5f5;
+}
+.button {
+  text-transform: none;
 }
 </style>

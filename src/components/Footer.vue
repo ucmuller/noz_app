@@ -52,7 +52,7 @@ export default class Footer extends Vue {
   public icons = [
     {
       icon: 'mdi-twitter',
-      link: 'https://twitter.com/Shampoo_ManiaTK'
+      link: 'https://twitter.com/kenji__inoue'
     },
     {
       icon: 'mdi-youtube',
@@ -65,17 +65,21 @@ export default class Footer extends Vue {
   ]
 
   public buttons = [
-    // {
-    //   label: 'シャンプー剤一覧',
-    //   link: ''
-    // },
+    {
+      label: '監修者の紹介',
+      link: 'https://select-shampoo.com/others/profile/'
+    },
     {
       label: 'シャンプーの選び方',
       link: 'https://select-shampoo.com/about-shampoo/how-to-choose-shampoo/'
     },
     {
+      label: '診断サイトの秘話',
+      link: 'https://note.com/kenjiinoue/n/nf2dd4c1e63cb'
+    },
+    {
       label: '運営元',
-      link: 'https://select-shampoo.com/others/profile/'
+      link: 'https://rndv.co.jp/'
     }
   ]
 

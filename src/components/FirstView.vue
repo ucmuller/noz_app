@@ -39,7 +39,7 @@
               color="#00acee"
               depressed
               small
-              @click="openWindow('https://twitter.com/intent/tweet?url=https://select-shampoo-7310c.web.app/&text=1%E5%88%86%E3%81%A7%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%E8%A8%BA%E6%96%AD&via=Shampoo_Meister&related=%40kenji__inoue&hashtags=SelectShampoo')"
+              @click="openWindow('https://twitter.com/intent/tweet?url=https://consultation.select-shampoo.com/&text=1%E5%88%86%E3%81%A7%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%E8%A8%BA%E6%96%AD&via=Shampoo_Meister&related=%40kenji__inoue&hashtags=SelectShampoo')"
             >
               Twitter
             </v-btn>
@@ -50,7 +50,7 @@
               color="#3B5998"
               depressed
               small
-              @click="openWindow('http://www.facebook.com/share.php?u=https://select-shampoo-7310c.web.app/')"
+              @click="openWindow('http://www.facebook.com/share.php?u=https://consultation.select-shampoo.com/')"
             >
               Facebook
             </v-btn>
