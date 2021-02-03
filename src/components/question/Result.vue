@@ -68,7 +68,7 @@
           class="white--text button font-weight-bold"
           color="#19C0C9"
           large
-          @click="openWindowAmazon('https://cramel.jp/productlist/14')"
+          @click="openWindow('https://cramel.jp/productlist/14')"
         >
           YouTuberが使っているシャンプー
         </v-btn>
@@ -81,18 +81,81 @@
           class="white--text button font-weight-bold"
           color="#19C0C9"
           large
-          @click="openWindowAmazon('https://cramel.jp/productlist/14')"
+          @click="openWindow('https://cramel.jp/productlist/14')"
         >
           YouTuberが使っているシャンプー
         </v-btn>
       </v-col>
-      <v-col cols="12" class="py-0">
-        <h3 class="pt-5">より詳しく診断を希望の方</h3>
-        <p class="red--text">(先着100名様無料診断)</p>
+      <v-col cols="12" class="py-5">
+        <h3 class="pt-10">より詳しく診断を希望の方</h3>
+        <p class="mb-3 red--text">(先着100名様無料診断)</p>
         <p class="line-introduction text-left">タイプ精度をあげるため、髪と頭皮にまつわる、より詳しい相談や診断をLINEにて承っております。 プロの美容師がより詳しいカウンセリング診断をして、アナタにあったシャンプーやトリートメント、施術などのオススメをしています。気軽にご相談下さい。</p>
         <h4 class="py-0">LINEで無料相談する</h4>
         <p class="red--text">(先着100名様無料)</p>
+        <!-- <v-btn
+          class="white--text button font-weight-bold mt-3"
+          color="#00B900"
+          large
+          block
+          @click="openWindow('https://lin.ee/Osk4lUC')"
+        >
+        <v-icon
+          left
+          dark
+        >
+          mdi-chat
+        </v-icon>
+          友だち追加
+        </v-btn> -->
         <a href="https://lin.ee/Osk4lUC"><img height="36" border="0" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"></a>
+      </v-col>
+      <v-col cols="12" class="py-5">
+        <h3 class="pt-10 mb-3">Youtube動画はこちらから</h3>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/ytCu66MZe7g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <v-btn
+          class="white--text button font-weight-bold mt-3"
+          color="#FF0000"
+          large
+          block
+          @click="openWindow('https://www.youtube.com/channel/UCcBv10OsykgKm2IZnhxx__g')"
+        >
+        <v-icon
+          left
+          dark
+        >
+          mdi-youtube
+        </v-icon>
+          YouTubeで見る
+        </v-btn>
+      </v-col>
+      <v-col cols="12" class="py-5">
+        <h3 class="pt-10 mb-3">Instagramはこちらから</h3>
+        <v-row>
+          <v-col cols="12">
+            <v-avatar
+              color="primary"
+              size="200"
+              @click="openWindow('https://www.instagram.com/select_shampoo/')"
+            >
+              <v-img :src="require('@/assets/kenji_insta.png')"></v-img>
+            </v-avatar>
+          </v-col>
+        </v-row>
+        <v-btn
+          class="white--text button font-weight-bold mt-3"
+          color="#D93177"
+          large
+          block
+          @click="openWindow('https://www.instagram.com/select_shampoo/')"
+        >
+        <v-icon
+          left
+          dark
+        >
+          mdi-instagram
+        </v-icon>
+          Instagramへ
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -171,7 +234,16 @@ export default class Result extends Vue {
     }
   }
 
-  public openWindowAmazon (url: string) {
+  public openWindow (url: string) {
+    if (url === 'https://www.youtube.com/channel/UCcBv10OsykgKm2IZnhxx__g') {
+      this.$ga.event('toYouTube', 'push')
+    }
+    if (url === 'https://www.instagram.com/select_shampoo/') {
+      this.$ga.event('toInstagram', 'push')
+    }
+    if (url === 'https://cramel.jp/productlist/14') {
+      this.$ga.event('toCramel', 'push')
+    }
     window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 }

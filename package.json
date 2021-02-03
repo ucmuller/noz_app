@@ -12,6 +12,7 @@
     "chart.js": "^2.9.3",
     "firebase": "^7.18.0",
     "vue": "^2.6.11",
+    "vue-adsense": "^1.0.1",
     "vue-analytics": "^5.22.1",
     "vue-chartjs": "^3.5.0",
     "vue-class-component": "^7.2.3",

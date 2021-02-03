@@ -175,7 +175,7 @@
                 class="profile mt-5"
                 size="164"
               >
-                <v-img cover :src="require('../assets/images/s-1080x1080_v-fs_webp_4961f6e0-9844-40b6-b1e3-9ffaafb18899_small.jpg')"></v-img>
+                <v-img cover :src="('../assets/images/s-1080x1080_v-fs_webp_4961f6e0-9844-40b6-b1e3-9ffaafb18899_small.jpg')"></v-img>
               </v-avatar>
               <p class="text-h7">
                 30代前半・女性

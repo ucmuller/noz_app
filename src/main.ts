@@ -1,11 +1,11 @@
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
+import { firestorePlugin } from 'vuefire'
 import App from './App.vue'
+import './assets/sass/style.scss'
+import vuetify from './plugins/vuetify'
 import router from './router'
 import store from './store'
-import vuetify from './plugins/vuetify'
-import VueAnalytics from 'vue-analytics'
-import './assets/sass/style.scss'
-import { firestorePlugin } from 'vuefire'
 
 Vue.config.productionTip = false
 Vue.use(firestorePlugin)

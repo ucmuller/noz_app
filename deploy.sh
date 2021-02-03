@@ -1,3 +1,14 @@
+if [ $1 ]; then
+  git add .
+  git commit -m "$1 $2 $3 $4"
+  git push origin master
+else
+  echo "commitしていない"
+fi
+
+
 npm run build
-# ビルドしたソース一式をWEBサーバーへ配置
+
 firebase deploy
+
+# firebase deploy --only firestore:rules
