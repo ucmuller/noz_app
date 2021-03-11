@@ -59,6 +59,18 @@
           <v-card-text class="text-left pb-0 pt-2">
             {{item.description}}
           </v-card-text>
+          <v-card-text v-if="item.youtubers != ''"  class="text-left pb-0 pt-2 font-weight-bold">
+            このシャンプーはYouTuberの"{{item.youtubers}}さん"も利用、YouTubeで紹介しています。
+          </v-card-text>
+          <v-btn
+            v-if="item.cramelLink != ''"
+            class="mt-2 white--text button font-weight-bold"
+            color="#19C0C9"
+            large
+            @click="openCramelWindow(item.cramelLink)"
+          >
+            このシャンプーを紹介している動画
+          </v-btn>
           <chart :chartData="chartData(item.point)" :options="chartOption"></chart>
           <v-col v-if="item.affiliateLinkAmazon" cols="12" class="px-10 py-0 pt-3">
             <v-btn
@@ -182,6 +194,11 @@ export default class ProductSuggest extends Vue {
 
   public openWindowRakuten (url: string) {
     this.$ga.event('rakutenLinkButton', 'push')
+    window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
+
+  public openCramelWindow (url: string) {
+    this.$ga.event('toCramelAtProductSuggest', 'push')
     window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 

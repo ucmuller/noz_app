@@ -111,13 +111,13 @@
       </v-col>
       <v-col cols="12" class="py-5">
         <h3 class="pt-10 mb-3">Youtube動画はこちらから</h3>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/ytCu66MZe7g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/ahnh8LBHNpM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <v-btn
           class="white--text button font-weight-bold mt-3"
           color="#FF0000"
           large
           block
-          @click="openWindow('https://www.youtube.com/channel/UCcBv10OsykgKm2IZnhxx__g')"
+          @click="openWindow('https://www.youtube.com/watch?v=ahnh8LBHNpM')"
         >
         <v-icon
           left
