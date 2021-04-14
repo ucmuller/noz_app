@@ -63,6 +63,12 @@
           </v-card>
         </v-col>
       </v-col>
+       <v-col cols="12" class="px-3 pt-5">
+        <v-img
+          :src="require('@/assets/images/banner_bota.png')"
+          @click="pushBannerBota()"
+        ></v-img>
+      </v-col>
       <v-col cols="12" class="pt-3 pb-0">
         <v-btn
           class="white--text button font-weight-bold"
@@ -245,6 +251,11 @@ export default class Result extends Vue {
       this.$ga.event('toCramel', 'push')
     }
     window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
+
+  public pushBannerBota () {
+    this.$ga.event('banner_BOTA', 'push')
+    window.open('https://monicam.jp/campaign/405', '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 }
 </script>
