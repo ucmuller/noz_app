@@ -189,6 +189,10 @@ export default class Question extends Vue {
           this.fetchShampooData(document.suggestions)
         })
       })
+      .then(() => {
+        this.fetchBannerShampooData()
+        console.log(this.shampooDataArray)
+      })
   }
 
   public fetchShampooData (data: number[]) {
@@ -204,6 +208,17 @@ export default class Question extends Vue {
           })
         })
     })
+  }
+
+  public fetchBannerShampooData () {
+    DB.collection('shampoo')
+      .doc('999')
+      .get()
+      .then(doc => {
+        const document = doc.data()
+        this.shampooDataArray.splice(2, 0, document)
+        this.isFetch = true
+      })
   }
 
   public saveAnsweredDataToFirestore () {

@@ -102,6 +102,16 @@
               楽天で購入する
             </v-btn>
           </v-col>
+          <v-col v-if="item.bannerUrl" cols="12" class="px-10 py-0 pt-3 pb-3">
+            <v-btn
+              class="white--text my-1"
+              block
+              color="#EA6382"
+              @click.stop.prevent="pushBannerBota()"
+            >
+              先着50名様にプレゼント！
+            </v-btn>
+          </v-col>
                   <!-- <v-rating
             v-model="item.rating"
             :length="rateLength"
@@ -153,6 +163,7 @@ export default class ProductSuggest extends Vue {
   public prizeIcon = [
     'prize-icon_1',
     'prize-icon_2',
+    'prize-icon_banner',
     'prize-icon_3'
   ]
 
@@ -200,6 +211,11 @@ export default class ProductSuggest extends Vue {
   public openCramelWindow (url: string) {
     this.$ga.event('toCramelAtProductSuggest', 'push')
     window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
+
+  public pushBannerBota () {
+    this.$ga.event('banner_BOTA_at_Rank', 'push')
+    window.open('https://monicam.jp/campaign/405', '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 
   public openModal () {
@@ -306,4 +322,11 @@ export default class ProductSuggest extends Vue {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.prize-icon_banner{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 </style>
