@@ -163,7 +163,7 @@ export default class ProductSuggest extends Vue {
   public prizeIcon = [
     'prize-icon_1',
     'prize-icon_2',
-    'prize-icon_banner',
+    // 'prize-icon_banner',
     'prize-icon_3'
   ]
 

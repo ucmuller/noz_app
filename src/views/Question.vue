@@ -190,7 +190,7 @@ export default class Question extends Vue {
         })
       })
       .then(() => {
-        this.fetchBannerShampooData()
+        // this.fetchBannerShampooData()
         console.log(this.shampooDataArray)
       })
   }

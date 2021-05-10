@@ -63,12 +63,12 @@
           </v-card>
         </v-col>
       </v-col>
-       <v-col cols="12" class="px-3 pt-5">
+      <!-- <v-col cols="12" class="px-3 pt-5">
         <v-img
           :src="require('@/assets/images/banner_bota.png')"
           @click="pushBannerBota()"
         ></v-img>
-      </v-col>
+      </v-col> -->
       <v-col cols="12" class="pt-3 pb-0">
         <v-btn
           class="white--text button font-weight-bold"
