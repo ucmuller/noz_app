@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@types/chart.js": "^2.9.24",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "firebase": "^7.18.0",
     "vue": "^2.6.11",
     "vue-adsense": "^1.0.1",
