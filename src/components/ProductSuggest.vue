@@ -132,7 +132,7 @@
           @handle-parent=updateDialog
         />
         <v-col
-          v-if="i==0"
+          v-if="i==1"
           cols="12" class="px-3 pt-5">
           <v-img
             :src="require('@/assets/images/monicam.jpg')"
