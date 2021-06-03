@@ -131,6 +131,14 @@
           :item=item
           @handle-parent=updateDialog
         />
+        <v-col
+          v-if="i==0"
+          cols="12" class="px-3 pt-5">
+          <v-img
+            :src="require('@/assets/images/monicam.jpg')"
+            @click="pushBannerBota()"
+          ></v-img>
+        </v-col>
       </v-col>
     </div>
   </v-col>
@@ -215,7 +223,7 @@ export default class ProductSuggest extends Vue {
 
   public pushBannerBota () {
     this.$ga.event('banner_BOTA_at_Rank', 'push')
-    window.open('https://monicam.jp/campaign/405', '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+    window.open('https://monicam.jp/', '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 
   public openModal () {
