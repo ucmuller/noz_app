@@ -63,13 +63,17 @@
           </v-card>
         </v-col>
       </v-col>
-      <!-- <v-col cols="12" class="px-3 pt-5">
-        <v-img
-          :src="require('@/assets/images/banner_bota.png')"
-          @click="pushBannerBota()"
-        ></v-img>
-      </v-col> -->
-      <v-col cols="12" class="pt-3 pb-0">
+      <v-col cols="12" class="px-3 pt-5">
+        <v-card
+          @click="openWindow('https://cramel.jp/productlist/14')"
+        >
+          <v-img
+            :src="require('@/assets/images/shampoo_cramel.001.jpeg')"
+            :aspect-ratio="16/9"
+          ></v-img>
+        </v-card>
+      </v-col>
+      <!-- <v-col cols="12" class="pt-3 pb-0">
         <v-btn
           class="white--text button font-weight-bold"
           color="#19C0C9"
@@ -78,11 +82,11 @@
         >
           YouTuberが使っているシャンプー
         </v-btn>
-      </v-col>
+      </v-col> -->
       <v-col cols="12" class="pa-0">
         <ProductSuggest :shampooDataArray=shampooDataArray :typePoint=localValues />
       </v-col>
-      <v-col cols="12" class="pt-3 pb-0">
+      <!-- <v-col cols="12" class="pt-3 pb-0">
         <v-btn
           class="white--text button font-weight-bold"
           color="#19C0C9"
@@ -91,6 +95,16 @@
         >
           YouTuberが使っているシャンプー
         </v-btn>
+      </v-col> -->
+      <v-col cols="12" class="px-3 pt-5">
+        <v-card
+          @click="openWindow('https://cramel.jp/productlist/14')"
+        >
+          <v-img
+            :src="require('@/assets/images/shampoo_cramel.001.jpeg')"
+            :aspect-ratio="16/9"
+          ></v-img>
+        </v-card>
       </v-col>
       <v-col cols="12" class="py-5">
         <h3 class="pt-10">より詳しく診断を希望の方</h3>
