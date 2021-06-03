@@ -98,7 +98,7 @@
       </v-col> -->
       <v-col cols="12" class="px-3 pt-5">
         <v-card
-          @click="openWindow('https://cramel.jp/productlist/14')"
+          @click="toCramelBottomBanner('https://cramel.jp/productlist/14')"
         >
           <v-img
             :src="require('@/assets/images/shampoo_cramel.001.jpeg')"
@@ -264,6 +264,11 @@ export default class Result extends Vue {
     if (url === 'https://cramel.jp/productlist/14') {
       this.$ga.event('toCramel', 'push')
     }
+    window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
+  }
+
+  public toCramelBottomBanner (url: string) {
+    this.$ga.event('toCramelBottomBanner', 'push')
     window.open(url, '_blank', 'width=1024,height=768,scrollbars=yes,resizable=yes')
   }
 
