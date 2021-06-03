@@ -1,0 +1,44 @@
+[debug] [2021-06-03T12:38:57.648Z] ----------------------------------------------------------------------
+[debug] [2021-06-03T12:38:57.650Z] Command:       /Users/ucmuller/.nodebrew/node/v10.13.0/bin/node /Users/ucmuller/.nodebrew/current/bin/firebase deploy
+[debug] [2021-06-03T12:38:57.650Z] CLI Version:   9.5.0
+[debug] [2021-06-03T12:38:57.650Z] Platform:      darwin
+[debug] [2021-06-03T12:38:57.650Z] Node Version:  v10.13.0
+[debug] [2021-06-03T12:38:57.653Z] Time:          Thu Jun 03 2021 21:38:57 GMT+0900 (GMT+09:00)
+[debug] [2021-06-03T12:38:57.653Z] ----------------------------------------------------------------------
+[debug] [2021-06-03T12:38:57.653Z] 
+[debug] [2021-06-03T12:38:57.665Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-06-03T12:38:57.666Z] > authorizing via signed-in user
+[debug] [2021-06-03T12:38:57.666Z] [iam] checking project select-shampoo-7310c for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2021-06-03T12:38:57.669Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/select-shampoo-7310c:testIamPermissions  
+ {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2021-06-03T12:38:58.363Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 03 Jun 2021 12:38:58 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=564","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-03T12:38:58.366Z] > refreshing access token with scopes: []
+[debug] [2021-06-03T12:38:58.367Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-03T12:38:58.747Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Thu, 03 Jun 2021 12:38:58 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-03T12:38:58.780Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/select-shampoo-7310c [none]
+[debug] [2021-06-03T12:38:59.345Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/select-shampoo-7310c 200
+[debug] [2021-06-03T12:38:59.345Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/select-shampoo-7310c {"projectId":"select-shampoo-7310c","projectNumber":"583516798720","displayName":"select-shampoo","name":"projects/select-shampoo-7310c","resources":{"hostingSite":"select-shampoo-7310c","realtimeDatabaseInstance":"select-shampoo-7310c","storageBucket":"select-shampoo-7310c.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE"}
+[debug] [2021-06-03T12:38:59.346Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/select-shampoo-7310c [none]
+[debug] [2021-06-03T12:39:00.027Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/select-shampoo-7310c 200
+[debug] [2021-06-03T12:39:00.027Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/select-shampoo-7310c {"projectId":"select-shampoo-7310c","projectNumber":"583516798720","displayName":"select-shampoo","name":"projects/select-shampoo-7310c","resources":{"hostingSite":"select-shampoo-7310c","realtimeDatabaseInstance":"select-shampoo-7310c","storageBucket":"select-shampoo-7310c.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'select-shampoo-7310c'...
+[info] 
+[info] i  deploying database, storage, firestore, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2021-06-03T12:39:00.033Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-06-03T12:39:00.033Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-03T12:39:00.171Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 03 Jun 2021 12:39:00 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-03T12:39:00.204Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/select-shampoo-7310c/locations/-/instances/select-shampoo-7310c  
+ 
+[debug] [2021-06-03T12:39:00.968Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 03 Jun 2021 12:39:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-03T12:39:00.971Z] >>> HTTP REQUEST PUT https://select-shampoo-7310c.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
